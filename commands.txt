@@ -1,6 +1,6 @@
 docker build -t python-docker .
 
-docker run -dp 127.0.0.1:5000:5000 python-docker
+docker run -dp 127.0.0.1:8000:8000 python-docker
 
 docker exec -it tender_snyder sh
 
