@@ -1,9 +1,9 @@
-docker build --tag python-docker
+docker build -t python-docker .
 
-docker run -d -p 5000:5000 python-docker
+docker run -dp 127.0.0.1:5000:5000 python-docker
 
-docker exec -it nervous_nash sh
+docker exec -it tender_snyder sh
 
-docker stop nervous_nash
+docker stop tender_snyder
 
 docker container prune

@@ -1,10 +1,10 @@
 FROM python:3.9.2-alpine
 
-WORKDIR /python-docker
-
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
-
+WORKDIR /app
 COPY . .
 
-CMD [ "python3", "-m", "flask", "run", "--host=0.0.0.0" ]
+RUN pip3 install --upgrade pip
+RUN pip3 install pipenv
+RUN pipenv install
+
+CMD [ "pipenv", "run", "flask", "run", "--host=0.0.0.0" ]
